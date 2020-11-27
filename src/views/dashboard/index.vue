@@ -1,20 +1,19 @@
 <template>
   <div class="dashboard-container">
     <div class="dashboard-text">
-      <img src="./sitefiles/9CA903139164501C6C9FDA20E6625773.png" style="height:100vh"/>
+      <!-- <img src="./sitefiles/9CA903139164501C6C9FDA20E6625773.png" style="height:100vh"/> -->
+      <china-map></china-map>
     </div>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import ChinaMap from './components/ChinaMap'
 
 export default {
   name: 'Dashboard',
-  computed: {
-    ...mapGetters([
-      'name'
-    ])
+  components: {
+    ChinaMap,
   }
 }
 </script>

@@ -1,5 +1,6 @@
 <script> 
-    const axiosURL="localhost:8001";
+
+    const axiosURL="49.232.214.175:8001";
     export default{
         axiosURL
     }

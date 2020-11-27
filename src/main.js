@@ -2,6 +2,7 @@ import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import 'echarts-wordcloud'
+import bmap from 'vue-baidu-map'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'
@@ -43,6 +44,8 @@ Vue.prototype.$echarts = echarts;
 Vue.prototype.axiosURL = axiosURL.axiosURL;
 
 Vue.config.productionTip = false
+
+// Vue.use(bm)
 
 new Vue({
   el: '#app',

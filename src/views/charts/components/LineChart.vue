@@ -27,6 +27,7 @@ export default {
   data() {
     return {
       chart: null,
+      months: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov", "Dec"],
     };
   },
   mounted() {
@@ -43,6 +44,7 @@ export default {
   },
   methods: {
     initChart() {
+      let vm = this;
       this.chart = echarts.init(this.$el, "macarons");
       this.chart.showLoading();
       this.axios.get("http://"+this.axiosURL+"/api/findByMonth").then((res) => {
@@ -55,6 +57,7 @@ export default {
           dataAxis.push(proName);
           data.push(num);
         }
+        console.log(vm.test());
         this.chart.hideLoading();
 
         this.chart.setOption({
@@ -69,7 +72,7 @@ export default {
           },
           xAxis: {
             type: "category",
-            data: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov", "Dec"],
+            data: vm.months,
           },
           yAxis: {
             type: "value",
@@ -83,6 +86,9 @@ export default {
         });
       });
     },
+    test(){
+      return "asd";
+    }
   },
 };
 </script>
